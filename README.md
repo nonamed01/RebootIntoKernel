@@ -38,6 +38,14 @@ arises, reboot into the current running one after 5 seconds:
 
 	./rk.sh -t 5 -r -k 4.19.2-amd64
 
+# Use cases
+
+After customizing your running kernel, or after installing a newer one by hand with the
+distro-agnostic **make bzImage ; make modules ...,**, once you have the vmlinuz and
+initrd files in **/boot/**, you can make use of this script to reboot into this new
+kernel and safely get back to the current running and stable one if an awful **Kernel
+Panic** is triggered.
+
 # Behind the scenes
 
 This script performs the following commands behind the scenes:
