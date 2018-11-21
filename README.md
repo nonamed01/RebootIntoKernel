@@ -26,13 +26,16 @@ Tested on the following GNU/Linux distros:
 # Usage
 
 Get help:
-	./rk.sh -h
+
+	* ./rk.sh -h
 
 Get GRUB's menu entry for the current running kernel:
-	./rk.sh -g `uname -r`
+
+	* ./rk.sh -g `uname -r`
 
 Reboot automatically into kernel 4.19.2-amd64 and, if a Kernel Panic
 arises, reboot into the current running one after 5 seconds:
-	./rk.sh -t 5 -r -k 4.19.2-amd64
+
+	* ./rk.sh -t 5 -r -k 4.19.2-amd64
 
 # Behind the scenes
