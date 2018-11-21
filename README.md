@@ -27,15 +27,28 @@ Tested on the following GNU/Linux distros:
 
 Get help:
 
-	* ./rk.sh -h
+	./rk.sh -h
 
 Get GRUB's menu entry for the current running kernel:
 
-	* ./rk.sh -g `uname -r`
+	./rk.sh -g `uname -r`
 
 Reboot automatically into kernel 4.19.2-amd64 and, if a Kernel Panic
 arises, reboot into the current running one after 5 seconds:
 
-	* ./rk.sh -t 5 -r -k 4.19.2-amd64
+	./rk.sh -t 5 -r -k 4.19.2-amd64
 
 # Behind the scenes
+
+	This script performs the following commands behind the scenes:
+
+	1) Adds (or update) the **panic** variable to **GRUB_CMDLINE_LINUX_DEFAULT** in
+	   the **/etc/defaults/grub**.
+
+	2) Sets the variable **GRUB_DEFAULT** to **saved** in **/etc/default/grub**.
+
+	3) Sets the current running kernel as the **saved** one by calling **grub-set-default**.
+
+	4) Sets the kernel to boot into the next reboot by calling **grub-reboot**.
+
+	5) Reboots the computer inmediately (if **-r** is given).
