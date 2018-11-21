@@ -40,15 +40,15 @@ arises, reboot into the current running one after 5 seconds:
 
 # Behind the scenes
 
-	This script performs the following commands behind the scenes:
+This script performs the following commands behind the scenes:
 
-	1) Adds (or update) the **panic** variable to **GRUB_CMDLINE_LINUX_DEFAULT** in
-	   the **/etc/defaults/grub**.
+1) Adds (or update) the **panic** variable to **GRUB_CMDLINE_LINUX_DEFAULT** in
+   the **/etc/defaults/grub**.
 
-	2) Sets the variable **GRUB_DEFAULT** to **saved** in **/etc/default/grub**.
+2) Sets the variable **GRUB_DEFAULT** to **saved** in **/etc/default/grub**.
 
-	3) Sets the current running kernel as the **saved** one by calling **grub-set-default**.
+3) Sets the current running kernel as the **saved** one by calling **grub-set-default**.
 
-	4) Sets the kernel to boot into the next reboot by calling **grub-reboot**.
+4) Sets the kernel to boot into the next reboot by calling **grub-reboot**.
 
-	5) Reboots the computer inmediately (if **-r** is given).
+5) Reboots the computer inmediately (if **-r** is given).
