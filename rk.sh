@@ -85,6 +85,7 @@ set_kernel_panic_timeout () {
 ###########################################################################################################
 get_grub_entry () {
 	mykernel=$1
+	test -r /boot/grub/grub.cfg || exit 0
 	cat /boot/grub/grub.cfg |grep "menuentry" |grep "$mykernel'"|awk -F"'"  '{print $2}'
 }
 
@@ -94,10 +95,6 @@ get_grub_entry () {
 #	/boot/grub/grub.cfg and /boot/grub/grubenv accordingly by calling update-grub
 ###########################################################################################################
 set_default_running_kernel () {
-	# First, we need to get the menu entry from /boot/grub/grub.cfg that belongs to our
-	# current running kernel:
-	# On Debian systems, under the first submenu we always have all the available
-	# kernels.
 	mykernel=`uname -r`
 	krn=`get_grub_entry $mykernel` 
 	# Unable to get the current running kernel entry from grub:
@@ -124,7 +121,6 @@ reboot_into_the_new_kernel () {
 	fi
 	# Let's reboot:
 	echo "Rebooting into the new installed kernel: ${rkrn} ... "
-	#grub-reboot "Advanced options for Debian GNU/Linux>${rkrn}"
 	grub-reboot "`format_grub_meny_entry`${rkrn}"
 	return $?
 }
