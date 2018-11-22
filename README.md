@@ -33,22 +33,22 @@ Get GRUB's menu entry for the current running kernel:
 
 	./rk.sh -g `uname -r`
 
-Reboot automatically into kernel **4.19.2-amd64** and, if a Kernel Panic
+Reboot automatically into kernel **4.19.2-amd64** and, if a **Kernel Panic**
 arises, reboot into the current running one after 5 seconds:
 
 	./rk.sh -t 5 -r -k 4.19.2-amd64
 
 # Use cases
 
-After customizing your running kernel, or after installing a newer one by hand with the
-distro-agnostic **make bzImage ; make modules ...,**, once you have the vmlinuz and
-initrd files in **/boot/**, you can make use of this script to reboot into this new
+After customising your running kernel, or after installing a newer one by hand with the
+distro-agnostic and old-fashioned **make bzImage ; make modules ...,**, once you have the 
+vmlinuz and initrd files in **/boot/**, you can make use of this script to reboot into this new
 kernel and safely get back to the current running and stable one if an awful **Kernel
 Panic** is triggered.
 
 # Behind the scenes
 
-This script performs the following commands behind the scenes:
+This script performs the following tasks behind the scenes:
 
 1) Adds (or updates) the **panic** variable to **GRUB_CMDLINE_LINUX_DEFAULT** in
    the **/etc/defaults/grub**.
