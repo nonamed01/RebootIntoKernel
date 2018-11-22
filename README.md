@@ -1,7 +1,7 @@
 # RebootIntoKernel
 
-This simple Bash script automatizes some common tasks usually performed when
-installing a customized or newer Linux Kernel by hand, to prevent the system
+This simple Bash script automatises some common tasks usually performed when
+installing a customised or newer Linux Kernel by hand, to prevent the system
 from crashing when a Kernel Panic arises after rebooting into the new kernel.
 
 # Tested on
