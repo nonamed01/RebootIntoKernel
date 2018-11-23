@@ -64,11 +64,11 @@ it updates **/boot/grub/grub.cfg** by calling **update-grub**.
 
 # Demo
 
-./rk.sh -t 20 -k 4.19.4
-Timeout of 20 seconds for kernel panic set.
-Default Running Kernel: Debian GNU/Linux, with Linux 4.9.0-8-amd64
-Rebooting into the new installed kernel: Debian GNU/Linux, with Linux 4.19.4 ... 
-Do you want to reboot now [yn] ?
-y
-Connection to HOST closed by remote host.
+./rk.sh -t 20 -k 4.19.4  
+Timeout of 20 seconds for kernel panic set.  
+Default Running Kernel: Debian GNU/Linux, with Linux 4.9.0-8-amd64  
+Rebooting into the new installed kernel: Debian GNU/Linux, with Linux 4.19.4 ...   
+Do you want to reboot now [yn] ?  
+y  
+Connection to HOST closed by remote host.  
 Connection to HOST closed.
